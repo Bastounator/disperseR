@@ -100,7 +100,7 @@ run_fac <- function(x,
       density = 1.5,
       shape_factor = 0.8,
       resuspension = 0,
-      ddep_vel = 0
+      ddep_vel = 0)
   } else {
     stop("No species or incorrect species defined!")
   }
