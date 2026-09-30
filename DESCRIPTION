@@ -1,41 +1,57 @@
 Package: disperseR
 Type: Package
-Title: Run HYSPLIT many times in parallel, aggregate to zip code level, plot the results, save the plots. 
-Version: 0.1.0
-Author: person("Lucas", "Henneman", email = "lhenneman@gmail.com", role = c("aut", "cre"))
+Title: Run HYSPLIT Many Times in Parallel, Aggregate to ZIP Code Level
+Version: 0.2.2
+Date: 2026-02-14
 Authors@R: c(
-    person("Lucas", "Henneman", role = c("aut", "cre")),
+    person("Lucas", "Henneman", email = "lhenneman@gmail.com", role = c("aut", "cre")),
     person("Christine", "Choirat", role = "aut"),
     person("Maja", "Garbulinska", role = "aut")
     )
+Author: Lucas Henneman [aut, cre],
+    Christine Choirat [aut],
+    Maja Garbulinska [aut]
 Maintainer: Lucas Henneman <lhenneman@gmail.com>
-Description: disperseR is a restructured version of the hispdisp package. It is an R package that runs HYSPLIT many times and calculates the HYSPLIT Average Dispersion (or HyADS) exposure metric.The results can then be aggregated to ZIP code level to create national estimates of exposure from various sources. For example, plumes from several power plants can be tracked for many days and cumulative impacts estimated. The package uses code borrowed from the SplitR package in a slightly modified version.
-URL: https://github.com/garbulinskamaja/disperseR
-BugReports: https://github.com/garbulinskamaja/disperseR/issues
+Description: Runs HYSPLIT many times and calculates the HYSPLIT Average
+    Dispersion (HyADS) exposure metric. Results can be aggregated to ZIP code
+    level to create national estimates of exposure from various sources. Uses
+    modern spatial libraries (sf, terra). HYSPLIT binaries can be provided via
+    the optional 'splitr' package (available from GitHub at
+    <https://github.com/rich-iannone/splitr>) or via explicit binary paths.
+URL: https://github.com/josbyb2020/disperseR-test2026
+BugReports: https://github.com/josbyb2020/disperseR-test2026/issues
 License: GPL-3
 LazyData: true
+LazyDataCompression: xz
+Encoding: UTF-8
 Depends:
-    data.table,
-    downloader,
+    R (>= 4.1.0),
+    data.table
+Imports:
+    sf (>= 1.0-0),
+    terra (>= 1.7-0),
     magrittr,
-    raster,
-    rgeos,
-    rgdal,
-    sp,
-    ncdf4, 
-    maps, 
-    ggplot2, 
-    ggsn,
-    tidyverse,
-    rmarkdown,
+    maps,
+    ggplot2,
+    lubridate,
+    parallel,
     scales,
-    gridExtra,
-    ggmap, 
-    ggrepel,
-    sf, 
     viridis,
-    fst
+    fst,
+    grid
 Suggests:
+    dplyr,
+    tidyr,
+    gridExtra,
+    ggmap,
+    ggrepel,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    rnaturalearth,
+    downloader
 VignetteBuilder: knitr
+RoxygenNote: 7.3.3
+Config/testthat/edition: 3
 Encoding: UTF-8
 RoxygenNote: 6.1.1
